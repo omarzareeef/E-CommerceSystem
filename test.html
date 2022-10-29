@@ -1,0 +1,1442 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="http://designm.ag/favicon.ico">
+    <link rel="icon" href="http://designm.ag/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" media="all"
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <style>
+        body {
+            margin-top: 0px;
+        }
+
+        .footer_area {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            /* webkit-box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175); */
+            box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
+            padding: 60px;
+        }
+
+        .footer_area .row {
+            margin-left: -25px;
+            margin-right: -25px;
+        }
+
+        .footer_area .row .col,
+        .footer_area .row .col-1,
+        .footer_area .row .col-10,
+        .footer_area .row .col-11,
+        .footer_area .row .col-12,
+        .footer_area .row .col-2,
+        .footer_area .row .col-3,
+        .footer_area .row .col-4,
+        .footer_area .row .col-5,
+        .footer_area .row .col-6,
+        .footer_area .row .col-7,
+        .footer_area .row .col-8,
+        .footer_area .row .col-9,
+        .footer_area .row .col-auto,
+        .footer_area .row .col-lg,
+        .footer_area .row .col-lg-1,
+        .footer_area .row .col-lg-10,
+        .footer_area .row .col-lg-11,
+        .footer_area .row .col-lg-12,
+        .footer_area .row .col-lg-2,
+        .footer_area .row .col-lg-3,
+        .footer_area .row .col-lg-4,
+        .footer_area .row .col-lg-5,
+        .footer_area .row .col-lg-6,
+        .footer_area .row .col-lg-7,
+        .footer_area .row .col-lg-8,
+        .footer_area .row .col-lg-9,
+        .footer_area .row .col-lg-auto,
+        .footer_area .row .col-md,
+        .footer_area .row .col-md-1,
+        .footer_area .row .col-md-10,
+        .footer_area .row .col-md-11,
+        .footer_area .row .col-md-12,
+        .footer_area .row .col-md-2,
+        .footer_area .row .col-md-3,
+        .footer_area .row .col-md-4,
+        .footer_area .row .col-md-5,
+        .footer_area .row .col-md-6,
+        .footer_area .row .col-md-7,
+        .footer_area .row .col-md-8,
+        .footer_area .row .col-md-9,
+        .footer_area .row .col-md-auto,
+        .footer_area .row .col-sm,
+        .footer_area .row .col-sm-1,
+        .footer_area .row .col-sm-10,
+        .footer_area .row .col-sm-11,
+        .footer_area .row .col-sm-12,
+        .footer_area .row .col-sm-2,
+        .footer_area .row .col-sm-3,
+        .footer_area .row .col-sm-4,
+        .footer_area .row .col-sm-5,
+        .footer_area .row .col-sm-6,
+        .footer_area .row .col-sm-7,
+        .footer_area .row .col-sm-8,
+        .footer_area .row .col-sm-9,
+        .footer_area .row .col-sm-auto,
+        .footer_area .row .col-xl,
+        .footer_area .row .col-xl-1,
+        .footer_area .row .col-xl-10,
+        .footer_area .row .col-xl-11,
+        .footer_area .row .col-xl-12,
+        .footer_area .row .col-xl-2,
+        .footer_area .row .col-xl-3,
+        .footer_area .row .col-xl-4,
+        .footer_area .row .col-xl-5,
+        .footer_area .row .col-xl-6,
+        .footer_area .row .col-xl-7,
+        .footer_area .row .col-xl-8,
+        .footer_area .row .col-xl-9,
+        .footer_area .row .col-xl-auto {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+
+        .single-footer-widget {
+            position: relative;
+            z-index: 1;
+        }
+
+        .single-footer-widget .copywrite-text a {
+            color: #747794;
+            font-size: 1rem;
+        }
+
+        .single-footer-widget .copywrite-text a:hover,
+        .single-footer-widget .copywrite-text a:focus {
+            color: #3f43fd;
+        }
+
+        .single-footer-widget .widget-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .single-footer-widget .footer_menu li a {
+            color: #747794;
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .single-footer-widget .footer_menu li a:hover,
+        .single-footer-widget .footer_menu li a:focus {
+            color: #3f43fd;
+        }
+
+        .single-footer-widget .footer_menu li:last-child a {
+            margin-bottom: 0;
+        }
+
+        .footer_social_area {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer_social_area a {
+            border-radius: 50%;
+            height: 40px;
+            text-align: center;
+            width: 40px;
+            display: inline-block;
+            background-color: #f5f5ff;
+            line-height: 40px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            margin-right: 10px;
+        }
+
+        .footer_social_area a i {
+            line-height: 36px;
+        }
+
+        .footer_social_area a:hover,
+        .footer_social_area a:focus {
+            color: #ffffff;
+        }
+
+        @-webkit-keyframes bi-cycle {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes bi-cycle {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        ol li,
+        ul li {
+            list-style: none;
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .centered {
+            position: absolute;
+            top: 30%;
+            right: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .centered2 {
+            position: absolute;
+            top: 40%;
+            right: 75%;
+            transform: translate(-50%, -50%);
+        }
+
+        .Parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            padding: 1em;
+            margin: 2em auto;
+            background: #eee;
+        }
+
+        .Child {
+            flex: 0 1 32%;
+        }
+
+        .Child:first-child {
+            flex: 100%;
+        }
+
+        .Child img {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.4;
+        }
+
+
+        body {
+            background: #eee;
+        }
+
+        #footer {
+            background: #404040;
+            padding: 0 0 30px 0;
+            color: #fff;
+            font-size: 14px
+        }
+
+        #footer .footer-newsletter {
+            padding: 50px 0;
+            background: #404040
+        }
+
+        #footer .footer-newsletter h4 {
+            font-size: 24px;
+            margin: 0 0 20px 0;
+            padding: 0;
+            line-height: 1;
+            font-weight: 600
+        }
+
+        #footer .footer-newsletter form {
+            margin-top: 30px;
+            background: #fff;
+            padding: 6px 10px;
+            position: relative;
+            border-radius: 50px
+        }
+
+        #footer .footer-newsletter form input[type="email"] {
+            border: 0;
+            padding: 8px;
+            width: calc(100% - 140px)
+        }
+
+        #footer .footer-newsletter form input[type="submit"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: 0;
+            background: none;
+            font-size: 16px;
+            padding: 0 30px;
+            margin: 3px;
+            background: #e96b56;
+            color: #fff;
+            transition: 0.3s;
+            border-radius: 50px
+        }
+
+        #footer .footer-newsletter form input[type="submit"]:hover {
+            background: #e6573f
+        }
+
+        #footer .footer-top {
+            background: #3b3b3b;
+            border-top: 1px solid #474747;
+            border-bottom: 1px solid #474747;
+            padding: 60px 0 30px 0
+        }
+
+        #footer .footer-top .footer-info {
+            margin-bottom: 30px
+        }
+
+        #footer .footer-top .footer-info h3 {
+            font-size: 18px;
+            margin: 0 0 20px 0;
+            padding: 2px 0 2px 0;
+            line-height: 1;
+            font-weight: 700
+        }
+
+        #footer .footer-top .footer-info p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: "Raleway", sans-serif;
+            color: #fff
+        }
+
+        #footer .footer-top .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: #545454;
+            color: #fff;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s
+        }
+
+        #footer .footer-top .social-links a:hover {
+            background: #e96b56;
+            color: #fff;
+            text-decoration: none
+        }
+
+        #footer .footer-top h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 12px
+        }
+
+        #footer .footer-top .footer-links {
+            margin-bottom: 30px
+        }
+
+        #footer .footer-top .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        #footer .footer-top .footer-links ul i {
+            padding-right: 2px;
+            color: #ec7f6d;
+            font-size: 18px;
+            line-height: 1
+        }
+
+        #footer .footer-top .footer-links ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center
+        }
+
+        #footer .footer-top .footer-links ul li:first-child {
+            padding-top: 0
+        }
+
+        #footer .footer-top .footer-links ul a {
+            color: #fff;
+            transition: 0.3s;
+            display: inline-block;
+            line-height: 1
+        }
+
+        #footer .footer-top .footer-links ul a:hover {
+            color: #e96b56
+        }
+
+        #footer .footer-top .footer-contact {
+            margin-bottom: 30px
+        }
+
+        #footer .footer-top .footer-contact p {
+            line-height: 26px
+        }
+
+        #footer .copyright {
+            text-align: center;
+            padding-top: 30px
+        }
+
+        #footer .credits {
+            padding-top: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #fff
+        }
+
+
+        .navbar {
+            color: #fff;
+            background: #323130 !important;
+            padding: 5px 16px;
+            border-radius: 0;
+            border: none;
+            box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+        }
+
+        .navbar img {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin-right: 10px;
+        }
+
+        .navbar .navbar-brand {
+            color: #efe5ff;
+            padding-left: 0;
+            padding-right: 50px;
+            font-size: 24px;
+        }
+
+        .navbar .navbar-brand:hover,
+        .navbar .navbar-brand:focus {
+            color: #fff;
+        }
+
+        .navbar .navbar-brand i {
+            font-size: 25px;
+            margin-right: 5px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding-right: 35px;
+            min-height: 38px;
+            border: none;
+            background: #faf7fd;
+            border-radius: 3px !important;
+        }
+
+        .search-box input:focus {
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .search-box .input-group-addon {
+            min-width: 35px;
+            border: none;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            z-index: 9;
+            padding: 10px 7px;
+            height: 100%;
+        }
+
+        .search-box i {
+            color: #a0a5b1;
+            font-size: 19px;
+        }
+
+        .navbar .nav-item i {
+            font-size: 18px;
+        }
+
+        .navbar .nav-item span {
+            position: relative;
+            top: 3px;
+        }
+
+        .navbar .navbar-nav>a {
+            color: #efe5ff;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        .navbar .navbar-nav>a:hover,
+        .navbar .navbar-nav>a:focus {
+            color: #fff;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar .navbar-nav>a>i {
+            display: block;
+            text-align: center;
+        }
+
+        .navbar .dropdown-item i {
+            font-size: 16px;
+            min-width: 22px;
+        }
+
+        .navbar .dropdown-item .material-icons {
+            font-size: 21px;
+            line-height: 16px;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+
+        .navbar .nav-item.open>a,
+        .navbar .nav-item.open>a:hover,
+        .navbar .nav-item.open>a:focus {
+            color: #fff;
+            background: none !important;
+        }
+
+        .navbar .dropdown-menu {
+            border-radius: 1px;
+            border-color: #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+
+        .navbar .dropdown-menu a {
+            color: #777 !important;
+            padding: 8px 20px;
+            line-height: normal;
+            font-size: 15px;
+        }
+
+        .navbar .dropdown-menu a:hover,
+        .navbar .dropdown-menu a:focus {
+            color: #333 !important;
+            background: transparent !important;
+        }
+
+        .navbar .navbar-nav .active a,
+        .navbar .navbar-nav .active a:hover,
+        .navbar .navbar-nav .active a:focus {
+            color: #fff;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+            background: transparent !important;
+        }
+
+        .navbar .navbar-nav .user-action {
+            padding: 9px 15px;
+            font-size: 15px;
+        }
+
+        .navbar .navbar-toggle {
+            border-color: #fff;
+        }
+
+        .navbar .navbar-toggle .icon-bar {
+            background: #fff;
+        }
+
+        .navbar .navbar-toggle:focus,
+        .navbar .navbar-toggle:hover {
+            background: transparent;
+        }
+
+        .navbar .navbar-nav .open .dropdown-menu {
+            background: #faf7fd;
+            border-radius: 1px;
+            border-color: #faf7fd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+
+        .navbar .divider {
+            background-color: #e9ecef !important;
+        }
+
+        @media (min-width: 1200px) {
+            .form-inline .input-group {
+                width: 350px;
+                margin-left: 30px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .navbar .navbar-nav>a>i {
+                display: inline-block;
+                text-align: left;
+                min-width: 30px;
+                position: relative;
+                top: 4px;
+            }
+
+            .navbar .navbar-collapse {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .navbar .navbar-form {
+                border: none;
+                display: block;
+                margin: 10px 0;
+                padding: 0;
+            }
+
+            .navbar .navbar-nav {
+                margin: 8px 0;
+            }
+
+            .navbar .navbar-toggle {
+                margin-right: 0;
+            }
+
+            .input-group {
+                width: 100%;
+            }
+        }
+
+        div.ui-slider-range.ui-widget-header {
+            background: #0000ff;
+        }
+
+
+        .buttonSale {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: Green;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 320px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .buttonSale span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .buttonSale span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .buttonSale:hover span {
+            padding-right: 25px;
+        }
+
+        .buttonSale:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .floating {
+            margin-left: 2%;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- /////////////////// navbar ////////////////////////// -->
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+
+        <!-- <div class="collapse " id="navbarToggleExternalContent" style="width:30%;">
+            <div class="bg-dark p-4">
+                <h4 style="color:white;">Filtration Of Items</h4>
+                <form class="d-flex" role="search" style="padding-bottom:4%;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>How To Sort</option>
+                    <option value="1">High : Low</option>
+                    <option value="2">Low : High</option>
+                </select>
+
+                <h6 style="color:white;">Range Of Price</h6>
+                <div id="rangedval">
+                    Range Value: <span id="rangeval">100 - 3000</span>
+                </div>
+                <div id="rangeslider"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark " style="width:30%;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav> -->
+
+
+
+
+
+
+
+
+        <a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Brand<b>Name</b></a>
+
+
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+
+            <!-- <button type="submit" style="width: 100px; margin-right:40px ;" onclick="Search_Product()" class="b">Search
+                <i class="fa fa-search"></i></button> -->
+            <form class="navbar-form form-inline">
+                <div id="foundItems" class="input-group search-box" style="margin-top: 15px;">
+                    <input type="text" id="search" class="form-control" placeholder="Search here...">
+                </div>
+                <span class="input-group-addon"
+                    style="padding: 7px; margin-top: 15px; background-color: white; color: #323130;"><i
+                        class="material-icons">&#xE8B6;</i></span>
+            </form>
+
+            <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-gears"></i><span>Projects</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-users"></i><span>Team</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-pie-chart"></i><span>Reports</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-briefcase"></i><span>Careers</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-envelope"></i><span>Messages</span></a>
+                <a href="./wishlist.html" class="nav-item nav-link"><i
+                        class="fa-solid fa-list"></i><span>Wishlist</span></a>
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
+                            src="./1.jpg" class="avatar" alt="Avatar">Menu<b class="caret"></b></a>
+
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ////////////////////// EXtention Nav ////////////////////////// -->
+
+    <!-- <div class="container-fluid"> -->
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+            <div class="container-fluid"> <a class="navbar-brand" href="#">BBBootstrap</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Shop </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Mobiles</a></li>
+                                <li><a class="dropdown-item" href="#">Laptops</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Accessories</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex"> <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button> </form>
+                </div>
+            </div>
+        </nav> -->
+
+    <!-- /////////////// main cover////////////////// -->
+    <!-- 
+        <img src="./Capture.PNG" class="img-fluid" alt="Wild Landscape" style="margin-bottom:3%;" /> -->
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
+        style="margin-bottom:8%;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="./Capture.PNG" class="d-block w-100" alt="..." style="width:80%; height:80%">
+
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="./Shop-Now-Button-CM.gif" class="d-block w-100" alt="..." style="width:80%; height:80%">
+
+            </div>
+            <div class="carousel-item">
+                <img src="./how-to-buy-a-domain-name-1.jpg" class="d-block w-100" alt="..."
+                    style="width:80%; height:80%">
+
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <script src="https://kit.fontawesome.com/72a2a5786c.js" crossorigin="anonymous"></script>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- //////////////filteration section//////////////// -->
+
+    <a class="btn btn-outline-info bi bi-filter" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample" style="margin-left:30%; width: 40%; height: 50px; font-size: x-large;">
+        Filter Items
+    </a>
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="offcanvasExampleLabel">Filtration Of Items</h3>
+            <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+
+        <div class="offcanvas-body">
+            <!-- <h4>Search About product</h4>
+
+            <form class="d-flex" role="search" style="padding-bottom:4%;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form> -->
+
+            <div style="padding-bottom:6%;">
+                <h4>Sort Items:</h4>
+                <select id="sort" class="form-select" aria-label="Default select example">
+                    <option value="0" selected>How To Sort</option>
+                    <option value="1">High : Low</option>
+                    <option value="2">Low : High</option>
+                </select>
+            </div>
+
+            <h4>Range Of Price</h4>
+            <div id="rangedval">
+                Range Value: <span id="rangeval">0 - 3000</span>
+            </div>
+            <div id="rangeslider"></div>
+
+
+            <button id="update" style="margin-top: 10%; margin-left: 25%" class="btn btn-success">update</button>
+            <button id="reset" style="margin-top: 20%; margin-left: 25%" class="btn btn-success">reset</button>
+
+        </div>
+    </div>
+
+
+    <!-- ///////////////////////// cover smalll ///////////////////// -->
+
+
+    <div class="row-cover" style="margin-bottom:5%;">
+        <div class="column-cover container-cover card__three">
+            <img src="boy2.jpg" alt="Snow" style="width:100%" class="cover-photo card__img">
+            <div class="text-block-cover centered-cover">
+                <h4 style="text-align:center;">Men's</h4>
+            </div>
+        </div>
+
+        <div class="column-cover container-cover card__three">
+            <img src="girl.jpg" alt="Forest" style="width:100%" class="cover-photo card__img">
+            <div class="text-block-cover centered-cover">
+                <h4 style="text-align:center;">Woman's</h4>
+            </div>
+        </div>
+
+        <div class="column-cover container-cover card__three">
+            <img src="boy.jpg" alt="Mountains" style="width:100%" class="cover-photo card__img">
+            <div class="text-block-cover centered-cover ">
+                <h4 style="text-align:center;">Kid's</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////////////////////// woman section//////////////////// -->
+    <div id="womenDiv" class="row">
+
+    </div>
+
+    <!-- ////////////////////////////// hover//////////////// -->
+
+
+    <div class="center" style="margin-left: 9%;">
+        <figure class="card card-with-hover">
+            <img src="./1.jpg" alt="img24">
+            <figcaption class="card-caption">
+                <div class="card-caption-content">
+
+                    <p>
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <p>New Collection</p>
+                    </p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="center">
+        <figure class="card card-with-hover">
+            <img src="./4.jpg" alt="img24">
+            <figcaption class="card-caption">
+                <div class="card-caption-content">
+
+                    <p>
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <p>New Collection</p>
+                    </p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="center">
+        <figure class="card card-with-hover">
+            <img src="./5.jpg" alt="img24">
+            <figcaption class="card-caption">
+                <div class="card-caption-content">
+
+                    <p>
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <p>New Collection</p>
+                    </p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="center">
+        <figure class="card card-with-hover">
+            <img src="./6.jpg" alt="img24">
+            <figcaption class="card-caption">
+                <div class="card-caption-content">
+
+                    <p>
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <p>New Collection</p>
+                    </p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="center">
+        <figure class="card card-with-hover">
+            <img src="./7.png" alt="img24">
+            <figcaption class="card-caption">
+                <div class="card-caption-content">
+
+                    <p>
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <p>New Collection</p>
+                    </p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <!-- /////////////////////////////////////////// -->
+    <img src="./0001-8193923584_20210919_175608_0000-1.png" style="width:40%; margin-left: 30%;">
+    <img src="./img_553470.png.crdownload" style="width:30%; margin-left: 35%; margin-bottom: 5%;">
+    <button id="sale" class="buttonSale" style="vertical-align:middle;"><span>Go TO Sale ,NOW ! </span></button>
+
+    <!-- ///////////////////////// Blog /////////////////////// -->
+
+    <h1 style="text-align:center; margin-bottom:3%"> FROM THE BLOG</h1>
+
+
+    <div class="Parent">
+        <div class="Child">
+
+        </div>
+        <div class="Child">
+            <img src="./f1.jpg" alt="" width="70%" height="60%" />
+            <div class="tag-list" style="display:flex;">
+                <div class="tag-item">
+                    <i class="fa fa-calendar-o"></i>
+                    May 4,2019
+                </div>
+                <div class="tag-item">
+                    <i class="fa fa-comment-o"></i>
+                    5
+                </div>
+            </div>
+            <h3>The Best Street Style From London Fashion Week</h3>
+            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat.</p>
+
+        </div>
+        <div class="Child">
+            <img src="./f2.jpg" alt="" width="70%" height="60%" />
+            <div class="tag-list" style="display:flex;">
+                <div class="tag-item">
+                    <i class="fa fa-calendar-o"></i>
+                    May 4,2019
+                </div>
+                <div class="tag-item">
+                    <i class="fa fa-comment-o"></i>
+                    5
+                </div>
+            </div>
+            <h3>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h3>
+            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat</p>
+        </div>
+        <div class="Child">
+            <img src="./f3.jpg" alt="" width="70%" height="60%" />
+            <div class="tag-list" style="display:flex;">
+                <div class="tag-item">
+                    <i class="fa fa-calendar-o"></i>
+                    May 4,2019
+                </div>
+                <div class="tag-item">
+                    <i class="fa fa-comment-o"></i>
+                    5
+                </div>
+            </div>
+            <h3>How To Brighten Your Wardrobe With A Dash Of Lime.</h3>
+            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat</p>
+        </div>
+    </div>
+    <!-- /////////////////////////pagination///////////////// -->
+    <div style="margin-left: 80%; padding-bottom:5%; ">
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="./shoppingCart.html" target="_blank">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- //////////////////////// footer ////////////////////// -->
+
+    <footer id="footer">
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="post"> <input type="email" name="email"><input type="submit"
+                                value="Subscribe"> </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p> A108 Adam Street <br> New York, NY 535022<br> United States <br><br> <strong>Phone:</strong>
+                            +1 5589 55488 55<br> <strong>Email:</strong> info@example.com<br> </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About DevVE</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
+                            valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3"> <a href="#" class="twitter"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a> <a href="#"
+                                class="instagram"><i class="fa-brands fa-instagram"></i></a> <a href="#"
+                                class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright"> &copy; Copyright <strong><span>DevVE</span></strong>. All Rights Reserved </div>
+            <div class="credits"> Designed by <a href="#">SalvadorDevVE</a> </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const myCarousel = document.getElementById('myCarousel')
+
+        if (myCarousel !== null) {
+            myCarousel.addEventListener('slide.bs.carousel', event => {
+                // do something...
+            });
+        }
+
+        localStorage.removeItem("normalProductsIds");
+        localStorage.removeItem("saleProductsIds");
+
+        var ListIds = JSON.parse(localStorage.getItem("wishListIds"));
+
+        var smallVal = 0, highVal = 3000, sortType = 0;
+        var filteration = JSON.parse(localStorage.getItem("filteration")) || {};
+        if (filteration["min"]) {
+            smallVal = filteration["min"], highVal = filteration["max"], sortType = filteration["sort"];
+            $('#rangeval').html(smallVal + " - " + highVal);
+        } else {
+            filteration["min"] = 0;
+            filteration["max"] = 3000;
+            filteration["sort"] = 0;
+
+            localStorage.setItem("filteration", JSON.stringify(filteration));
+        }
+
+        // var e = document.getElementById("sort");
+        // sortType = e.value;
+
+        document.getElementById("reset").addEventListener("click", () => {
+            localStorage.removeItem("filteration");
+            location.reload();
+        });
+
+        document.getElementById("update").addEventListener("click", () => {
+            var filteration = JSON.parse(localStorage.getItem("filteration"));
+            if (filteration) {
+                filteration["min"] = smallVal;
+                filteration["max"] = highVal;
+                filteration["sort"] = sortType;
+                localStorage.setItem("filteration", JSON.stringify(filteration));
+                location.reload();
+            }
+        });
+
+        $('#rangeslider').slider({
+            range: true,
+            min: 0,
+            max: 3000,
+            values: [smallVal, highVal],
+            slide: function (event, ui) {
+                smallVal = ui.values[0];
+                highVal = ui.values[1];
+                var filteration = JSON.parse(localStorage.getItem("filteration")) || {};
+                if (filteration["min"]) {
+                    filteration["min"] = smallVal;
+                    filteration["max"] = highVal;
+                    filteration["sort"] = sortType;
+                    localStorage.setItem("filteration", JSON.stringify(filteration));
+                }
+                $('#rangeval').html(smallVal + " - " + highVal);
+            }
+        });
+
+        var promoCodes = { omar: 40, haidy: 40, yousef: 30, taloba: 10 };
+        localStorage.setItem("promoCodes", JSON.stringify(promoCodes));
+
+        var data;
+
+        var XHR = new XMLHttpRequest();
+        XHR.open("get", "https://fakestoreapi.com/products", true);
+        XHR.onreadystatechange = function () {
+            if (XHR.readyState == 4 && XHR.status == 200) {
+                data = JSON.parse(XHR.responseText);
+                if (highVal >= smallVal) {
+                    for (product of data) {
+                        if (product.price >= smallVal && product.price <= highVal) {
+                            DisplayProduct(product);
+                        }
+                    }
+                    // if (sortType == 0) {
+                    //     productsBeforeSort.forEach(element => {
+                    //         DisplayProduct(element);
+                    //     });
+                    // } else if (sortType == 1) {
+                    //     console.log("1");
+                    //     arr = sortAsc(productsBeforeSort);
+                    //     arr.forEach(element => {
+                    //         DisplayProduct(element);
+                    //     });
+                    // } else if (sortType == 2) {
+                    //     console.log("2");
+                    //     arr = sortDesc(productsBeforeSort);
+                    //     arr.forEach(element => {
+                    //         DisplayProduct(element);
+                    //     });
+                    // }
+
+                }
+            }
+        }
+        XHR.send();
+
+        // function sortAsc(products) {
+        //     return products.sort(function (a, b) {
+        //         return parseFloat(a.price) - parseFloat(b.price);
+        //     });
+        // }
+
+        // function sortDesc(products) {
+        //     return products.sort(function (a, b) {
+        //         return parseFloat(b.price) - parseFloat(a.price);
+        //     });
+        // }
+
+        function DisplayProduct(item) {
+            item['sale'] = Math.random() < 0.5;
+
+            var productDiv = document.createElement("div");
+            productDiv.classList = "card container";
+            productDiv.style = "margin:1%; height:50%; width: 20%; float:left;";
+            productDiv.style.position = "relative";
+
+            var imgDiv = document.createElement("div");
+            imgDiv.style = `border:1px solid black; width:100%; height:250px`;
+
+            var productImg = document.createElement("img");
+            productImg.id = "img" + item.id;
+            productImg.src = item.image;
+            productImg.alt = item.title;
+            productImg.style.width = "100%";
+            productImg.style.height = "100%";
+            productImg.onclick = showDetails;
+            imgDiv.appendChild(productImg);
+
+            var productInfo = document.createElement("div");
+            productInfo.className = "card-body";
+            productInfo.style = "margin:1%; width:100%; height:30%; float:left";
+
+            var productTitle = document.createElement("p");
+            productTitle.innerText = item.title;
+            productTitle.classList = "prodct card-text";
+            productTitle.style.width = "100%";
+            productTitle.style.height = "70px";
+
+            var productPrice = document.createElement("p");
+            productPrice.id = "price" + item.id;
+            productPrice.innerText = item.price;
+            productPrice.style.display = "inline";
+            productPrice.style.width = "100%";
+            productPrice.style.height = "10%";
+
+            var productLike = document.createElement("button");
+            productLike.id = "like" + item.id;
+            productLike.innerText = "Like";
+            productLike.style.fontSize = "25px";
+            productLike.style.fontWeight = "700";
+            productLike.style.float = "right";
+            productLike.style.border = "none";
+            productLike.style.cursor = "pointer";
+            productLike.onclick = addToWishList;
+            if (ListIds.includes(item.id + '')) {
+                productLike.style.color = "blue";
+            }
+
+            var cartBtn = document.createElement("button");
+            cartBtn.id = "btn" + item.id;
+            cartBtn.innerText = "Add to Cart";
+            cartBtn.className = "btn btn-success";
+            cartBtn.style.width = "100%";
+            cartBtn.style.height = "10%";
+            cartBtn.onclick = addToCart;
+
+            productInfo.appendChild(productTitle);
+            productInfo.appendChild(productPrice);
+            productInfo.appendChild(productLike);
+            productInfo.appendChild(cartBtn);
+
+            productDiv.appendChild(imgDiv);
+            productDiv.appendChild(productInfo);
+
+
+            document.getElementById("womenDiv").appendChild(productDiv);
+        }
+
+        document.getElementById("sale").onclick = () => {
+            var productsInSaleId = [];
+            for (i = 0; i < data.length; i++) {
+                if (data[i].sale) {
+                    productsInSaleId.push(data[i].id);
+                }
+            }
+            localStorage.setItem("saleIds", JSON.stringify(productsInSaleId));
+            var shoppingCartWindow = window.open("./SalesNew.html", "_blank");
+        };
+
+        function showDetails(e) {
+            sessionStorage.setItem('id', e.target.id.split("g")[1]);
+            var showDetailsWindow = window.open("./productDetails.html", "_blank");
+        }
+
+        function addToWishList(e) {
+            var wishListIds = [];
+            if (localStorage.getItem("wishListIds")) {
+                wishListIds = JSON.parse(localStorage.getItem("wishListIds"));
+            }
+
+            var idNum = e.target.id.split("e")[1];
+            if (wishListIds.includes(idNum)) {
+                wishListIds.splice(wishListIds.indexOf(idNum), 1);
+                document.getElementById(e.target.id).style.color = "black";
+            } else {
+                wishListIds.push(idNum);
+                document.getElementById(e.target.id).style.color = "blue";
+            }
+
+            localStorage.setItem("wishListIds", JSON.stringify(wishListIds));
+        }
+
+        function addToCart(e) {
+            var cartProducts = {};
+            if (localStorage.getItem("normalProductsIds")) {
+                cartProducts = JSON.parse(localStorage.getItem("normalProductsIds"));
+            }
+
+            var idNum = e.target.id.split("n")[1];
+            if (cartProducts[idNum]) {
+                cartProducts[idNum].quantity++;
+            } else {
+                cartProducts[idNum] = {
+                    id: idNum,
+                    quantity: 1
+                };
+            }
+
+            localStorage.setItem("normalProductsIds", JSON.stringify(cartProducts));
+        }
+
+        // document.getElementById("search").addEventListener("keyup", () => {
+        //     const searchbox = document.getElementById("search").value.toUpperCase();
+        //     const product = document.querySelectorAll(".prodct");
+        //     document.getElementById("foundItems").innerText = "";
+        //     console.log(searchbox);
+
+        //     for (var i = 0; i < product.length; i++) {
+        //         let match = product[i];
+
+        //         if (match) {
+        //             let textvalue = match.textContent || match.innerHTML;
+        //             console.log(textvalue.toUpperCase());
+        //             if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+        //                 var title = document.createElement("p");
+        //                 title.innerText = textvalue;
+        //                 document.getElementById("foundItems").appendChild(title);
+        //             }
+        //         }
+        //     }
+        // });
+
+        // document.getElementById("search").addEventListener("keyup", () => {
+        //     Search_Product()
+        // });
+
+        // function Search_Product() {
+        //     let input = document.getElementById('searchbar').value
+        //     input = input.toLowerCase();
+        //     let x = document.getElementsByClassName('prodct');
+
+        //     for (i = 0; i < x.length; i++) {
+        //         if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        //             x[i].style.display = "none";
+        //         }
+        //         else {
+        //             x[i].style.display = "";
+        //         }
+        //     }
+        // }
+
+        // const myCarouselElement = document.querySelector('#myCarousel')
+        // const carousel = new bootstrap.Carousel(myCarouselElement, {
+        //     interval: 500,
+        //     wrap: false
+        // })
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

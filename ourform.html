@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="div1">
+        <div class="form" id="div2">
+
+            <!-- //two our page -->
+
+            <div class="btn" id="div3">
+                <button class="signUpBtn">SIGN Up</button>
+                <button class="loginBtn">LOG IN</button>
+            </div>
+
+            <!-- // containt -->
+            <!-- // signUp page -->
+            <form method="get" action="" class="signUp" style="visibility:visible">
+
+                <div class="formItem">
+                    <input type="text" id="userName" placeholder="User Name" autocomplete="off" required>
+                </div>
+                <div></div>
+
+                <div class="formItem">
+                    <input type="email" id="Email" placeholder="Email ID" autocomplete="off" required>
+                </div>
+                <div></div>
+                <div class="formItem">
+                    <input type="password" id="password" placeholder="Password" autocomplete="off" required>
+                </div>
+                <div></div>
+                <!-- <div class="formItem">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="off"
+                        required>
+                </div> -->
+
+                <div class="checkBox">
+                    <input type="checkbox" name="checkbox" id="checkbox" checked>
+                    <span class="text">I agree with term & conditions</span>
+                </div>
+
+                <div class="formItem">
+                    <a href="./test.html">
+                        <button type="button" class="btn2">REGISTER</button>
+                    </a>
+                </div>
+
+            </form>
+
+            <!-- ///////// Log In page  -->
+
+            <form method="get" action="" class="signUp" style="visibility:hidden">
+
+                <div class="formItem">
+                    <input type="email" id="EmailLogin" placeholder="EmailID" autocomplete="off" required>
+
+                </div>
+                <div></div>
+
+
+
+                <div class="formItem">
+                    <input type="password" id="passwordLogin" placeholder="Password" autocomplete="off" required>
+
+                </div>
+                <div></div>
+
+
+
+                <div class="checkBox">
+                    <input type="checkbox" name="checkbox" id="checkboxLogin">
+                    <span class="text">Keep me signed in on this device</span>
+                </div>
+
+                <div class="formItem">
+                    <a href="./test.html">
+                        <button type="button" class="btn2">Log In</button>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

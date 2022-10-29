@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        var id = sessionStorage.getItem('id');
+        //1. Create Request
+        var XHR = new XMLHttpRequest();
+
+        //2. Open Request
+        XHR.open("get", `https://fakestoreapi.com/products/${id}`, true);
+
+        //3. Handel onreadystatechange to feel getting the response
+        XHR.onreadystatechange = function () {
+            //when response is recived & status is ok
+            if (XHR.readyState == 4 && XHR.status == 200) {
+                var product = JSON.parse(XHR.responseText);
+                DisplayProduct(product);
+            }
+        }
+
+        //4. Send the request
+        XHR.send();
+
+        function DisplayProduct(item) {
+            var productDiv = document.createElement("div");
+                productDiv.style.border = "1px solid black";
+                productDiv.style.padding = "5px";
+                productDiv.style.margin = "5px";
+                productDiv.style.display = "inline-block";
+                productDiv.width = "200";
+                productDiv.height = "300";
+
+
+                var imgDiv = document.createElement("div");
+                imgDiv.style.border = "1px solid black"
+
+                var productImg = document.createElement("img");
+                productImg.id = "img"+item.id;
+                productImg.src = item.image;
+                productImg.width = "200";
+                productImg.height = "200";
+                productImg.alt = item.title;
+                imgDiv.appendChild(productImg);
+
+                var productTitle = document.createElement("p");
+                productTitle.innerText = item.title;
+                productTitle.style.width = "200px"
+
+                var productPrice = document.createElement("p");
+                productPrice.innerText = item.price;                
+
+                productDiv.appendChild(imgDiv);
+                productDiv.appendChild(productTitle);
+                productDiv.appendChild(productPrice);
+
+                document.body.appendChild(productDiv);
+        }
+    </script>
+</body>
+
+</html>

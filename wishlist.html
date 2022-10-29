@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <p class="h1" style="padding-top:3%;">Wishlist Items</p>
+
+        <div id="products" style="overflow:auto"></div>
+        
+    </div>
+
+    <script>
+
+        var ids = JSON.parse(localStorage.getItem("wishListIds"));
+
+        if (ids) {
+            var i = 0;
+            while (i < ids.length) {
+                getProduct(ids[i]);
+                i++;
+            }
+        }
+
+
+        function getProduct(id) {
+            var XHR = new XMLHttpRequest();
+            XHR.open("get", `https://fakestoreapi.com/products/${id}`, false);
+            XHR.onreadystatechange = function () {
+                if (XHR.readyState == 4 && XHR.status == 200) {
+                    var product = JSON.parse(XHR.responseText);
+                    displayProduct(product);
+                }
+            }
+            XHR.send();
+        }
+
+        function displayProduct(item) {
+            var productDiv = document.createElement("div");
+            productDiv.className = "card";
+            productDiv.style = "border:1px solid black; margin:1%; height: 70%; width:18rem; float:left";
+            productDiv.style.position = "relative";
+
+            var productImg = document.createElement("img");
+            productImg.id = "img" + item.id;
+            productImg.src = item.image;
+            productImg.alt = item.title;
+            productImg.style.width = "100%";
+            productImg.style.height = "60%";
+
+            var productInfo = document.createElement("div");
+            productInfo.className = "card-body";
+            productInfo.style = "margin:1%; width:100%; height:30%; float:left";
+
+            var productTitle = document.createElement("p");
+            productTitle.innerText = item.title;
+            productTitle.style.width = "100%"
+            productTitle.className = "card-text"
+
+            var productPrice = document.createElement("p");
+            productPrice.id = "price" + item.id;
+            productPrice.innerText = item.price;
+            productPrice.style.width = "100%";
+            productPrice.style.height = "2%";
+
+            var cartBtn = document.createElement("button");
+            cartBtn.id = "btn" + item.id;
+            cartBtn.innerText = "Add to Cart";
+            cartBtn.className = "btn btn-success";
+            cartBtn.style.width = "90%";
+            cartBtn.style.position = "absolute"
+            cartBtn.style.bottom = "2%";
+            cartBtn.onclick = addToCart;
+
+            productInfo.appendChild(productTitle);
+            productInfo.appendChild(productPrice);
+            productInfo.appendChild(cartBtn);
+
+            productDiv.appendChild(productImg);
+            productDiv.appendChild(productInfo);
+
+            document.getElementById("products").appendChild(productDiv);
+        }
+
+        function addToCart(e) {
+            var cartProducts = {};
+            if (localStorage.getItem("normalProductsIds")) {
+                cartProducts = JSON.parse(localStorage.getItem("normalProductsIds"));
+            }
+
+            var idNum = e.target.id.split("n")[1];
+            if (cartProducts[idNum]) {
+                cartProducts[idNum].quantity++;
+            } else {
+                cartProducts[idNum] = {
+                    id: idNum,
+                    quantity: 1
+                };
+            }
+
+            localStorage.setItem("normalProductsIds", JSON.stringify(cartProducts));
+        }
+
+    </script>
+</body>
+
+</html>

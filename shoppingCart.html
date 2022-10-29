@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div style="border:thick solid black; display: inline-block; padding: 5px; margin: 5px;">
+        <p style="margin: 10px; display: inline-block">Total Price: </p>
+        <p id="totalPrice" style="margin: 10px; display: inline-block">0</p>
+        <br>
+    </div>
+
+    <div id="saleProducts" style="border:thick solid black; padding: 5px; margin: 5px;">
+        <div style="border:1px solid black; display: inline;">
+            <p style="margin: 10px; display: inline-block">Sale Products Price: </p>
+            <p id="salePrice" style="margin: 10px; display: inline-block">0</p>
+            <br>
+        </div>
+    </div>
+    <div id="normalProducts" style="border:thick solid black; padding: 5px; margin: 5px;">
+        <div style="border:1px solid black; display: inline;">
+            <p style="margin: 10px; display: inline-block">Normal Products Price: </p>
+            <p id="normalPrice" style="margin: 10px; display: inline-block">0</p>
+            <br>
+        </div>
+    </div>
+
+    <div id="normalProducts" style="width: 60%;border:thick solid black; padding: 5px; margin: auto;">
+        <p style="margin: 10px; display: inline-block">If you have promo code, enter for <span
+                style="font-weight: bold; color: blue;">discount</span>: </p>
+        <input id="promoCode" type="text" style="margin: 10px;" placeholder="promo code here." maxlength="10">
+        <p id="oldPrice" style="margin: 5px;text-decoration: line-through; display: inline-block"></p>
+        <p id="newPrice" style="margin: 5px; display: inline-block"></p>
+        <button id="receipt" style="margin: 10px;float: right;">Receipt</button>
+    </div>
+
+
+    <script>
+        var noPromoCode = true;
+        document.getElementById("receipt").addEventListener("click", () => {
+            var enteredPromoCode = document.getElementById("promoCode").value;
+            if(enteredPromoCode){
+                var promoCodes = JSON.parse(localStorage.getItem("promoCodes"));
+                if(promoCodes[enteredPromoCode]){
+                    if(noPromoCode){
+                        document.getElementById("oldPrice").innerText = document.getElementById("totalPrice").innerText;
+                        var priceAfterDiscount = document.getElementById("totalPrice").innerText * (100-promoCodes[enteredPromoCode]) / 100;
+                        document.getElementById("newPrice").innerText = priceAfterDiscount;
+                        noPromoCode = false;
+                    }
+                }
+            }
+            
+
+        })
+
+        var salePricesArray = [], salePrice = 0, normalPrice = 0;
+        var saleProducts = false;
+        var saleDiv = document.getElementById("saleProducts");
+        var normalDiv = document.getElementById("normalProducts");
+
+        var saleIds = JSON.parse(localStorage.getItem("saleProductsIds"));
+        var normalIds = JSON.parse(localStorage.getItem("normalProductsIds"));
+
+        if (saleIds) {
+            saleProducts = true;
+            Object.entries(saleIds).forEach(([key, value]) => getProduct(value.id));
+            saleProducts = false;
+        }
+        if (normalIds) {
+            Object.entries(normalIds).forEach(([key, value]) => getProduct(value.id));
+        }
+
+        function getProduct(id) {
+            var XHR = new XMLHttpRequest();
+
+            //2. Open Request
+            XHR.open("get", `https://fakestoreapi.com/products/${id}`, false);
+
+            //3. Handel onreadystatechange to feel getting the response
+            XHR.onreadystatechange = function () {
+                //when response is recived & status is ok
+                if (XHR.readyState == 4 && XHR.status == 200) {
+                    var product = JSON.parse(XHR.responseText);
+                    displayProduct(product);
+                }
+            }
+
+            //4. Send the request
+            XHR.send();
+        }
+
+        function displayProduct(item) {
+            var productDiv = document.createElement("div");
+            productDiv.style = `border:1px solid black; padding:5px; margin:5px; display:inline-block; width:200; height:300`;
+
+
+            var imgDiv = document.createElement("div");
+            imgDiv.style = `border:1px solid black`;
+
+            var productImg = document.createElement("img");
+            productImg.src = item.image;
+            productImg.width = "200";
+            productImg.height = "200";
+            productImg.alt = item.title;
+            imgDiv.appendChild(productImg);
+
+            var productTitle = document.createElement("p");
+            productTitle.innerText = item.title;
+            productTitle.style.width = "200px"
+
+            var productPrice = document.createElement("p");
+            productPrice.innerText = item.price;
+
+            var productQty = document.createElement("input");
+            productQty.type = "text";
+            productQty.maxLength = 5;
+            productQty.addEventListener("input", () => {
+                productQty.style.width = productQty.value.toString().length + "ch";
+            });
+
+            var saveBtn = document.createElement("button");
+            saveBtn.innerText = "Save Quantity";
+            saveBtn.style.float = "right";
+            saveBtn.onclick = saveQuantity;
+
+            productDiv.appendChild(imgDiv);
+            productDiv.appendChild(productTitle);
+            productDiv.appendChild(productPrice);
+            productDiv.appendChild(productQty);
+            productDiv.appendChild(saveBtn);
+
+            if (saleProducts) {
+                productPrice.id = "priceSale" + item.id;
+                productQty.id = "qtySale" + item.id;
+                productQty.readOnly = true;
+                productQty.value = saleIds[item.id].quantity;
+                productQty.style.width = saleIds[item.id].quantity.toString().length + "ch";
+                saveBtn.id = "saveQtySale" + item.id;
+                saveBtn.style.display = "none";
+                salePricesArray.push(item.price);
+                // salePrice += item.price * saleIds[item.id].quantity;
+                saleDiv.appendChild(productDiv);
+            } else {
+                productPrice.id = "priceNormal" + item.id;
+                productQty.id = "qtyNormal" + item.id;
+                productQty.value = normalIds[item.id].quantity;
+                productQty.style.width = normalIds[item.id].quantity.toString().length + "ch";
+                saveBtn.id = "saveQtyNormal" + item.id;
+                normalPrice += item.price * normalIds[item.id].quantity;
+                normalDiv.appendChild(productDiv);
+            }
+        }
+
+        function calcSalePrice(arr) {
+            var dealCount = Math.floor(arr.length / 4);
+            if (dealCount == 0 && arr.length > 0) {
+                dealCount = 1;
+            } else if (dealCount == 0 && arr.length == 0) {
+                return 0;
+            }
+            var itemsCountInSale = dealCount * 2;
+            var itemsCountOutSale;
+            if (arr.length < 4) {
+                itemsCountOutSale = 0;
+            } else {
+                itemsCountOutSale = arr.length - dealCount * 4;
+            }
+            return nLargestElements(arr, (itemsCountInSale + itemsCountOutSale)).reduce((partialSum, a) => partialSum + a, 0);
+        }
+
+        function nLargestElements(lst, n) {
+            var largArr = new Array();
+
+            for (let x = 0; x < n; x++) {
+                largArr[x] = 0;
+            }
+
+            largArr[0] = Math.max(...lst);
+
+            for (let x = 1; x < n; x++) {
+                for (let i = 0; i < lst.length; i++) {
+                    if (lst[i] > largArr[x]
+                        && lst[i] < largArr[x - 1]) {
+                        largArr[x] = lst[i];
+                    }
+                }
+            }
+            return largArr;
+        }
+
+        function saveQuantity(e) {
+            var type = e.target.parentElement.parentElement.id;
+            if (type == "saleProducts") {
+                // let arrPos = e.target.id.split("e")[2];
+                // // salePrice -= document.getElementById("priceSale" + arrPos).innerText * saleIds[arrPos].quantity;
+                // let oldQty = saleIds[arrPos].quantity;
+                // let productQty = document.getElementById("qtySale" + arrPos).value;
+                // if (productQty != 0) {
+                //     saleIds[arrPos].quantity = productQty;
+                //     let changedCount = oldQty - productQty;
+                //     if (changedCount > 0) {
+                //         for (let cnt = 0; cnt < changedCount; cnt++) {
+                //             var indexToBeRemoved = salePricesArray.indexOf(e.target.price);
+                //             if (index > -1) {
+                //                 salePricesArray.splice(index, 1);
+                //             }
+                //         }
+                //     } else {
+                //         for (let cnt = 0; cnt > changedCount; cnt--) {
+                //             salePricesArray.push(e.target.price);
+                //         }
+                //     }
+                //     salePrice = calcSalePrice(salePricesArray);
+                //     // salePrice += document.getElementById("priceSale" + arrPos).innerText * productQty;
+                // } else {
+                //     var sure = confirm("Are You sure You want to delete this Item??");
+                //     if (sure) {
+                //         delete saleIds[arrPos];
+                //         var toBeDeletedDiv = e.target.parentElement;
+                //         saleDiv.removeChild(toBeDeletedDiv);
+                //     }
+                //     else {
+                //         document.getElementById("qtySale" + arrPos).value = 1;
+                //         saleIds[arrPos].quantity = 1
+                //         salePrice += document.getElementById("priceSale" + arrPos).innerText * productQty;
+                //     }
+                // }
+                // document.getElementById("totalPrice").innerText = salePrice + normalPrice;
+                // document.getElementById("salePrice").innerText = salePrice;
+                // localStorage.saleProductsIds = JSON.stringify(saleIds);
+            } else {
+                let arrPos = e.target.id.split("l")[1];
+                let productNewQty = document.getElementById("qtyNormal" + arrPos).value;
+                let productOldQty = normalIds[arrPos].quantity;
+                if (productNewQty == productOldQty) {
+                    return;
+                } else {
+                    normalPrice -= document.getElementById("priceNormal" + arrPos).innerText * productOldQty
+                    if (productNewQty != 0) {
+                        normalIds[arrPos].quantity = productNewQty;
+                        normalPrice += document.getElementById("priceNormal" + arrPos).innerText * productNewQty;
+                    } else {
+                        var sure = confirm("Are You sure You want to delete this Item??");
+                        if (sure) {
+                            delete normalIds[arrPos];
+                            var toBeDeletedDiv = e.target.parentElement;
+                            normalDiv.removeChild(toBeDeletedDiv);
+                        }
+                        else {
+                            document.getElementById("qtyNormal" + arrPos).value = 1;
+                            normalIds[arrPos].quantity = 1
+                            normalPrice += Number.parseInt(document.getElementById("priceNormal" + arrPos).innerText);
+                        }
+                    }
+                    document.getElementById("totalPrice").innerText = salePrice + normalPrice;
+                    document.getElementById("normalPrice").innerText = normalPrice;
+                    localStorage.normalProductsIds = JSON.stringify(normalIds);
+                }
+            }
+
+        }
+
+        salePrice = calcSalePrice(salePricesArray);
+        document.getElementById("totalPrice").innerText = salePrice + normalPrice;
+        document.getElementById("salePrice").innerText = salePrice;
+        document.getElementById("normalPrice").innerText = normalPrice;
+    </script>
+</body>
+
+</html>
