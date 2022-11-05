@@ -1,0 +1,2 @@
+# E-CommerceSystem
+We worked on **E-Commerce System** in a team of 4 members, I was responsible for Java Script and AJAX. In this project customer can Add to Cart Whatever 	he wants from our products, also browsing our Sales and add to Cart what he wants but with limits for our business logic. Cart splits into sections depending on Products from Sale or with normal price, He can see his cart with every product he added with quantity and price. Also, he can view the checkout.  
